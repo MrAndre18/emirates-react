@@ -1,0 +1,90 @@
+@import './utils/utils';
+
+body {
+  position: relative;
+  background-color: $black;
+  color: $white;
+
+  .content {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .title-block {
+      position: relative;
+      width: 100%;
+      @include adaptiv-value('padding-top', $header-height-pc, $header-height-mob);
+      @include adaptiv-value('padding-right', $title-left-padding-pc + $page-padding-pc, $page-padding-mob);
+      @include adaptiv-value('padding-left', $title-left-padding-pc + $page-padding-pc, $page-padding-mob);
+      overflow: hidden;
+
+      &__title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        @include adaptiv-value('margin-bottom', $block-margin-pc, $block-margin-mob);
+        @include adaptiv-value('margin-top', $block-margin-pc, $block-margin-mob);
+        font-weight: 700;
+        @include adaptiv-font(60, 20);
+        letter-spacing: 0.15em;
+        text-transform: capitalize;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: 100%;
+          transform: translateX(-50%);
+          width: 20%;
+          @include adaptiv-value('height', 3, 2);
+          background: $gold;
+        }
+      }
+    }
+  }
+}
+
+.os-scrollbar {
+
+  &-handle {
+    --os-handle-bg: rgba(115, 126, 132, 0.8);
+    --os-handle-bg-hover: rgba(64, 64, 64, 0.8);
+    --os-handle-bg-active: rgba(64, 64, 64, 0.8);
+  }
+}
+
+.swiper-notification {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1000;
+}
+
+.svg {
+  polygon {
+    fill: $white;
+    stroke: $white;
+  }
+}
+
+.parallax__inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  transition: transform 0.3s linear;
+}
+
+.img2background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
