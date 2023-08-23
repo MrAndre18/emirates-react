@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { ReactComponent as DropdownArrow } from '../../../assets/images/svg/drop-down.svg';
+import Select, { components } from 'react-select';
+import './Dropdown.scss';
 
 const Dropdown = ({ itemsList }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  return (
-    <div className="dropdown">
-      <button className="dropdown-btn">
-        <span className="dropdown-btn__text">RU</span>
-        <div className="dropdown-btn__arrow">
-          <DropdownArrow />
-        </div>
-      </button>
+  const DropdownIndicator = (props) => {
+    return (
+      <components.DropdownIndicator {...props}>
+        <DropdownArrow />
+      </components.DropdownIndicator>
+    );
+  };
 
-      <ul className="dropdown-list">
-        {itemsList.map((item, index) =>
-          <li key={index} className="dropdown-item">{item.name}</li>
-        )}
-      </ul>
-    </div>
+  return (
+    <Select
+      options={itemsList}
+      components={{ DropdownIndicator }}
+      unstyled
+      isSearchable={false}
+      defaultValue={itemsList[0]}
+      classNamePrefix='react-select'
+    />
   );
 };
 
