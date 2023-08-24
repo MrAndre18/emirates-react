@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ReactComponent as DropdownArrow } from '../../../assets/images/svg/drop-down.svg';
 import Select, { components } from 'react-select';
 import './Dropdown.scss';
 
 const Dropdown = ({ itemsList }) => {
-  const [isOpen, setIsOpen] = useState(false)
 
   const DropdownIndicator = (props) => {
     return (

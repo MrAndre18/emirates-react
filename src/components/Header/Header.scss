@@ -46,7 +46,7 @@
     align-items: center;
   }
 
-  &-navbar {
+  &-menu {
     @media (max-width: 768px) {
       position: absolute;
       top: 100%;
@@ -65,7 +65,7 @@
       @include transition(transform, 0.8s, cubic-bezier(0.65, 0, 0.35, 1), 0s);
     }
 
-    &.active {
+    &--active {
       transform: translateX(0);
     }
 
@@ -110,10 +110,12 @@
   }
 
   &-language {
-    position: relative;
-
-    .drop-down__list {
-      right: -6px;
+    & .react-select__control {
+      @media (max-width: 768px) {
+        padding: 10px;
+        border-radius: 10px;
+        background: $dark-grey;
+      }
     }
   }
 }

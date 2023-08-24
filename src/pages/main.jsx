@@ -2,7 +2,10 @@ import React from 'react';
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <main className="content main">
+      Main
+      <section className="content-section section"></section>
+    </main>
   );
 };
 

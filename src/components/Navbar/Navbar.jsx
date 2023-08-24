@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../UI/LinkNavigation.scss';
 import { Link } from 'react-router-dom';
+import { HeaderMenuStateContext } from '../../context/context';
 
 const Navbar = ({ navigation }) => {
+  const { setHeaderMenuIsOpen } = useContext(HeaderMenuStateContext)
+
   return (
     <nav className="navigation">
       <ul className="navigation-list">
@@ -12,6 +15,7 @@ const Navbar = ({ navigation }) => {
             <Link
               to={item.path}
               className='navigation-link'
+              onClick={() => setHeaderMenuIsOpen(false)}
             >
               {item.name}
             </Link>

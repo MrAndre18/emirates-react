@@ -2,7 +2,7 @@
 
 .react-select {
   &__control {
-    height: fit-content;
+    max-height: fit-content;
   }
 
   &__control:hover {
@@ -40,44 +40,50 @@
   }
 
   &__menu {
-    width: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: fit-content;
+    max-height: 400px;
+    max-width: 500px;
     padding: 15px 12px;
     background: rgba(64, 64, 64, 0.7);
     box-shadow: -2px 2px 10px 2px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(3px);
     border-radius: 10px;
+    @include transition();
+
+    @media (max-width: 768px) {
+      position: fixed !important;
+      top: 50% !important;
+      left: 50% !important;
+      z-index: 2000;
+      transform: translate(-50%, -50%);
+      background: rgba(64, 64, 64, 0.9);
+      box-shadow: 0px 0px 30px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__option {
+    text-align: center;
+    @include transition();
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &:hover {
+      color: $gold;
+      cursor: pointer;
+    }
+
+    &--is-selected {
+      color: $gold;
+    }
   }
 }
-
-// .dropdown {
-//   &-btn {
-//     display: flex;
-//     align-items: center;
-
-//     &__text {
-//       text-transform: uppercase;
-//       margin-right: 4px;
-//       @include transition();
-//     }
-
-//     &__arrow {
-//       display: flex;
-//       align-items: center;
-
-//       & * {
-//         @include transition();
-//       }
-//     }
-
-//     &:hover &__text,
-//     &.active &__text {
-//       color: $gold;
-//     }
-
-//     &:hover &__arrow *,
-//     &.active &__arrow * {
-//       fill: $gold;
-//     }
-//   }
-
-// }
