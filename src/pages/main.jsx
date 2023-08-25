@@ -1,10 +1,13 @@
 import React from 'react';
+import '../assets/styles/Main.scss';
+import MainTitle from '../components/MainPage/Title/Title';
 
 const Main = () => {
   return (
     <main className="content main">
-      Main
-      <section className="content-section section"></section>
+      <MainTitle />
+      
+      <section className="section"></section>
     </main>
   );
 };

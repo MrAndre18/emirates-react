@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
 import Header from './components/Header/Header';
 import { HeaderMenuStateContext } from './context/context';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   const [headerMenuIsOpen, setHeaderMenuIsOpen] = useState(false)
@@ -16,6 +17,7 @@ const App = () => {
         >
           <Header />
           <AppRouter />
+          <Footer />
         </HeaderMenuStateContext.Provider>
       </BrowserRouter>
     </div>

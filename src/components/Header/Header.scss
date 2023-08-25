@@ -6,7 +6,6 @@
   z-index: 100;
   @include adaptiv-value('height', $header-height-pc, $header-height-mob);
   width: 100%;
-  max-width: 1920px;
   background: none;
   border-bottom: 1px solid $white;
   @include adaptiv-value('padding-right', $page-padding-pc, $page-padding-mob);

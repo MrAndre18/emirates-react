@@ -1,0 +1,125 @@
+@import '../../assets/styles/utils/utils';
+
+.footer {
+  border-top: 1px solid $grey;
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    @include adaptiv-value('padding-right', 150, $page-padding-mob);
+    @include adaptiv-value('padding-left', 150, $page-padding-mob);
+    @include adaptiv-value('padding-top', 120, 60);
+    @include adaptiv-value('padding-bottom', 60, 30);
+    display: flex;
+
+    @media (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 80px;
+      row-gap: 40px;
+    }
+  }
+
+  &-settings {
+    @media (max-width: 1024px) {
+      grid-column: 1 / 3;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-language {
+    @include adaptiv-value('margin-top', 60, 30);
+
+    @media (max-width: 1024px) {
+      margin-top: 0;
+    }
+  }
+
+  &-links {
+    width: 100%;
+
+    &__title {
+      @include adaptiv-value('padding-bottom', 14, 8);
+      @include adaptiv-value('padding-left', 30, 0);
+      border-bottom: 1px solid $white;
+      @include adaptiv-value('margin-bottom', 30, 16);
+      text-transform: uppercase;
+      @include adaptiv-font(20, 16);
+      letter-spacing: 0.2em;
+      line-height: normal;
+      font-weight: 700;
+
+      @media (max-width: 768px) {
+        padding-left: 0;
+      }
+    }
+
+    &__list {
+      @include adaptiv-value('padding-right', 30, 0);
+      @include adaptiv-value('padding-left', 30, 0);
+
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+
+      & .navigation {
+        &-list {
+          display: flex;
+          flex-direction: column;
+        }
+
+        &-item:not(:last-child) {
+          @include adaptiv-value('margin-bottom', 14, 10);
+        }
+
+        &-link {
+          display: inline-block;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  &-map {
+    @include adaptiv-value('margin-right', 120, 0);
+    @include adaptiv-value('margin-left', 150, 0);
+
+    @media (max-width: 1024px) {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &-useful {
+    @media (max-width: 768px) {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &-language {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    & .react-select__control {
+      @media (max-width: 768px) {
+        padding: 10px;
+        border-radius: 10px;
+        background: $dark-grey;
+      }
+    }
+  }
+
+  &-copyrights {
+    @include adaptiv-value('height', 100, 60);
+    @include adaptiv-font(16, 12);
+    border-top: 1px solid $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

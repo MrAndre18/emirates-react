@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import '../UI/LinkNavigation.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HeaderMenuStateContext } from '../../context/context';
 
 const Navbar = ({ navigation }) => {
@@ -12,13 +12,14 @@ const Navbar = ({ navigation }) => {
 
         {navigation.map((item, index) =>
           <li key={index} className="navigation-item">
-            <Link
+            <NavLink
               to={item.path}
               className='navigation-link'
+              activeclassname='active'
               onClick={() => setHeaderMenuIsOpen(false)}
             >
               {item.name}
-            </Link>
+            </NavLink>
           </li>
         )}
 

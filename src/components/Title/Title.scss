@@ -1,0 +1,33 @@
+@import '../../assets/styles/utils/utils';
+
+.title {
+  &-text {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    @include adaptiv-value('margin-bottom', $block-margin-pc, $block-margin-mob);
+    @include adaptiv-value('margin-top', $block-margin-pc, $block-margin-mob);
+    font-weight: 700;
+    @include adaptiv-font(60, 20);
+    letter-spacing: 0.15em;
+    text-transform: capitalize;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      width: 20%;
+      @include adaptiv-value('height', 3, 2);
+      background: $gold;
+    }
+  }
+
+  &-subtitle {
+    @include adaptiv-value('max-width', 600, 290);
+    @include adaptiv-font(20, 14);
+    @include adaptiv-value('margin-bottom', 100, 60);
+  }
+}
