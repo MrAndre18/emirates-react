@@ -1,18 +1,18 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { appRoutes } from '../router/routes';
+import { infoRoutes } from '../router/routes';
 
 const AppRouter = () => {
   return (
     <Routes>
-      {appRoutes.map((route, index) =>
+      {infoRoutes.map((route, index) =>
         <Route
           key={index}
           path={route.path}
           element={route.element}
         />
       )}
-      <Route path="/*" element={<Navigate to="/" replace />} />
+      <Route path="/*" element={<Navigate to="/info/laws" replace />} />
     </Routes>
   );
 };

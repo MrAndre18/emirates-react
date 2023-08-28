@@ -5,7 +5,7 @@ const Title = ({ title, subtitle }) => {
   return (
     <section className="title">
       <h1 className="title-text">{title}</h1>
-      <p className="title-subtitle">{subtitle}</p>
+      {subtitle && <p className="title-subtitle">{subtitle}</p>}
     </section>
   );
 };

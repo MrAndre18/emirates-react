@@ -1,0 +1,55 @@
+@import '../../../../src/assets/styles/utils/utils';
+
+.tabs {
+  &-header {
+    border-bottom: 1px solid $gold;
+    @include adaptiv-value('padding-right', 80, 0);
+    display: flex;
+    justify-content: flex-end;
+    @include adaptiv-value('margin-bottom', 80, 40);
+  }
+
+  &-navigation {
+    position: relative;
+    display: flex;
+    width: fit-content;
+
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+      flex-direction: column;
+    }
+
+    &__item {
+      @include adaptiv-value('padding-right', 30, 10);
+      @include adaptiv-value('padding-left', 30, 10);
+      @include adaptiv-value('padding-top', 20, 5);
+      @include adaptiv-value('padding-bottom', 20, 5);
+      @include transition();
+
+      &:hover {
+        color: $gold;
+      }
+
+      &[aria-current] {
+        color: $black;
+  
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &-bg {
+    position: absolute;
+    z-index: -1;
+    background: $gold;
+    @include adaptiv-value('border-top-left-radius', 10, 5);
+    @include adaptiv-value('border-top-right-radius', 10, 5);
+    @include transition();
+
+    @media (max-width: 768px) {
+      @include adaptiv-value('border-radius', 10, 5);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@import '../../assets/styles/utils/utils';
+
+.tabs {
+  @include adaptiv-value('padding-left', $page-padding-pc, $page-padding-mob);
+  @include adaptiv-value('padding-right', $page-padding-pc, $page-padding-mob);
+  @include adaptiv-value('margin-bottom', $block-margin-pc, $block-margin-mob);
+  width: 100%;
+}

@@ -15,7 +15,6 @@ const Navbar = ({ navigation }) => {
             <NavLink
               to={item.path}
               className='navigation-link'
-              activeclassname='active'
               onClick={() => setHeaderMenuIsOpen(false)}
             >
               {item.name}
