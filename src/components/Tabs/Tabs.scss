@@ -5,4 +5,14 @@
   @include adaptiv-value('padding-right', $page-padding-pc, $page-padding-mob);
   @include adaptiv-value('margin-bottom', $block-margin-pc, $block-margin-mob);
   width: 100%;
+
+  &-page {
+    position: relative;
+    width: 100%;
+    display: flex;
+
+    @media (max-width: 1400px) {
+      display: block;
+    }
+  }
 }
