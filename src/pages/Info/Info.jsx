@@ -1,8 +1,8 @@
 import React from 'react';
-import Title from '../components/Title/Title';
-import { tabs } from '../utils/navigation';
-import InfoRouter from '../components/InfoRouter';
-import Tabs from '../components/Tabs/Tabs';
+import Title from '../../components/Title/Title';
+import { tabs } from '../../utils/navigation';
+import InfoRouter from '../../components/InfoRouter';
+import Tabs from '../../components/Tabs/Tabs';
 
 const Info = () => {
   return (

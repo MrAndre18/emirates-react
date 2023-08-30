@@ -15,4 +15,62 @@
       display: block;
     }
   }
+
+  &-menu {
+    position: sticky;
+    @include adaptiv-value('top', $header-height-pc + 20, $header-height-mob + 10);
+    @include adaptiv-value('width', $nav-bar-width-pc, $nav-bar-width-mob);
+    height: fit-content;
+    flex-shrink: 0;
+
+    @media (max-width: 1400px) {
+      position: absolute;
+      z-index: 99;
+      top: 0;
+      height: 100%;
+      transform: translateX(-100%);
+      @include transition();
+
+      &.active {
+        transform: translateX(0);
+
+        .nav-bar__btn {
+          left: calc(100% - 30px);
+          top: 0;
+          transform: rotate(180deg);
+          width: 30px;
+          height: 30px;
+          border: 1px solid $white;
+
+          &-img {
+            width: 8px;
+            transform: translateX(1px);
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      position: relative;
+      margin-bottom: 20px;
+      transform: translateX(0);
+      width: 100%;
+    }
+  }
+
+  &-content {
+    height: 1000px;
+
+    position: relative;
+    width: 100%;
+    @include adaptiv-value('margin-left', 40, 0);
+
+    @media (max-width: 1400px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 1024px) {
+      padding-right: 0;
+    }
+  }
 }

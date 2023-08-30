@@ -58,3 +58,42 @@ export const usefulLinks = [
     name: 'Свободные экономические зоны'
   },
 ]
+
+export const lawsCategories = [
+  {
+    path: 'real_estate',
+    name: 'Недвижимость',
+    children: [
+      {
+        path: 'real_estate/rent',
+        name: 'Аренда',
+        children: [
+          {
+            path: 'real_estate/rent/landlord_rights',
+            name: 'Права арендодателя',
+          },
+          {
+            path: 'real_estate/rent/tenant_rights',
+            name: 'Права арендатора',
+          },
+        ]
+      },
+      {
+        path: 'real_estate/purchase',
+        name: 'Покупка',
+      },
+      {
+        path: 'real_estate/sale',
+        name: 'Продажа',
+      },
+    ]
+  },
+  {
+    path: 'family_law',
+    name: 'Семейное право'
+  },
+  {
+    path: 'labor_law',
+    name: 'Трудовое право'
+  },
+]

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../assets/styles/Main.scss';
-import MainTitle from '../components/MainPage/Title/Title';
+import './Main.scss';
+import MainTitle from '../../components/MainPage/Title/Title';
 
 const Main = () => {
   return (

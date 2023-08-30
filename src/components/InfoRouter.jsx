@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { infoRoutes } from '../router/routes';
+import { infoRoutes, lawsCategoriesRoutes } from '../router/routes';
 
-const AppRouter = () => {
+const InfoRouter = () => {
   return (
     <Routes>
       {infoRoutes.map((route, index) =>
@@ -12,9 +12,9 @@ const AppRouter = () => {
           element={route.element}
         />
       )}
-      <Route path="/*" element={<Navigate to="/info/laws" replace />} />
+      <Route path="/*" element={<Navigate to={`/info/laws/${lawsCategoriesRoutes[0].id}`} replace />} />
     </Routes>
   );
 };
 
-export default AppRouter;
+export default InfoRouter;
