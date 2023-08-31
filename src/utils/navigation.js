@@ -16,7 +16,7 @@ export const pages = [
 export const tabs = [
   {
     path: 'laws',
-    name: 'Законы'
+    name: 'Законы',
   },
   {
     path: 'documents',
