@@ -4,46 +4,16 @@ import './Laws.scss';
 import LawsRouter from '../../../../components/LawsRouter';
 import { useLocation } from 'react-router-dom';
 import { lawsCategories } from '../../../../utils/navigation';
+import { getCategoriesArray } from '../../../../utils/categories';
 
 const Laws = () => {
   const
     [linksList, setLinksList] = useState([]),
-    location = useLocation()
-
-  const getCurrentCategory = (path) => {
-    const current = path.slice(-1)
-    // console.log("🚀 ~ file: Laws.jsx:17 ~ getCurrentCategory ~ current:", current)
-    // console.log("🚀 ~ file: Laws.jsx:22 ~ setCategory ~ currentLocationPath:", path)
-
-    path.forEach(element => {
-      console.log(element);
-      if (element === current) {
-        
-      }
-    });
-  }
-
-  const setCategory = () => {
-    const locationPath = location.pathname.split('/').filter(el => el !== '')
-    
-    lawsCategories.forEach(element => {
-      if (locationPath.indexOf(element.path) !== -1) {
-        const
-          currentLocationIndex = locationPath.indexOf(element.path),
-          currentLocationPath = locationPath.slice(currentLocationIndex)
-        
-        getCurrentCategory(currentLocationPath)
-
-        return
-      } else {
-        setLinksList(lawsCategories)
-      }
-    });
-  }
+    location = useLocation(),
+    currentCategory = location.pathname.split('/').filter(el => el !== '').slice(-1)[0]
 
   useEffect(() => {
-    setCategory()
-    
+    setLinksList(getCategoriesArray(lawsCategories, currentCategory))
   }, [location])
 
   return (
