@@ -1,0 +1,17 @@
+@import '../../../assets/styles/utils/utils';
+
+.menu-sticky {
+  @include adaptiv-value('padding-right', 30, 10);
+  @include adaptiv-value('padding-left', 30, 10);
+  @include adaptiv-value('padding-top', 20, 20);
+  @include adaptiv-value('padding-bottom', 20, 10);
+  @include adaptiv-value('max-height', 500, 300);
+  background: $dark-grey;
+  border-radius: 20px;
+  overflow: hidden;
+  @include transition();
+
+  @media (max-width: 1400px) {
+    box-shadow: -3px 0 8px 8px rgba(39, 39, 39, 0.3);
+  }
+}

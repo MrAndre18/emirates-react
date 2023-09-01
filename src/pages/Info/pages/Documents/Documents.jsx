@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import StickyMenu from '../../../../components/StickyMenu/StickyMenu';
+import StickyMenu from '../../../../components/UI/StickyMenu/StickyMenu';
 import { useLocation } from 'react-router-dom';
 import { getCategoriesArray } from '../../../../utils/categories';
 import { documentsCategories } from '../../../../utils/navigation';
+import CategoriesMenu from '../../../../components/CategoriesMenu/CategoriesMenu';
 
 const Documents = () => {
   const
     [linksList, setLinksList] = useState([]),
-    location = useLocation(),
-    currentCategory = location.pathname.split('/').filter(el => el !== '').slice(-1)[0]
+    location = useLocation()
 
   useEffect(() => {
-    setLinksList(getCategoriesArray(documentsCategories, currentCategory))
+    setLinksList(getCategoriesArray(documentsCategories, location))
   }, [location])
 
   return (
     <div className="tabs-page">
       <div className="tabs-menu">
-        <StickyMenu linksList={linksList} />
+        <StickyMenu>
+          <CategoriesMenu categories={linksList} />
+        </StickyMenu>
       </div>
 
       <div className="tabs-content">
