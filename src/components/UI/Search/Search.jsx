@@ -5,13 +5,16 @@ import { ReactComponent as SearchIcon } from '../../../assets/images/svg/search.
 const Search = (props) => {
   return (
     <div className={classes['search']}>
-      <input
-        className={classes['search-input']}
-        type="search"
-        name="search"
-        placeholder={`Искать в ""`}
-        {...props}
-      />
+      <label className={classes['search-label']}>
+        <input
+          className={classes['search-input']}
+          type="search"
+          name="search"
+          autoComplete='off'
+          {...props}
+        />
+        <span className={classes['search-label__text']}>Искать в &laquo;{'Недвижимость'}&raquo;</span>
+      </label>
       <div className={classes['search-icon']}>
         <SearchIcon />
       </div>

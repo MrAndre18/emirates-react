@@ -8,6 +8,7 @@ import { getCategoriesArray, getPreviousCategory } from '../../../../utils/categ
 import CategoriesMenu from '../../../../components/CategoriesMenu/CategoriesMenu';
 import BtnCategoriesBack from '../../../../components/UI/buttons/btnCategoriesBack/BtnCategoriesBack';
 import InfoFilter from '../../../../components/InfoFilter/InfoFilter';
+import { tags } from '../../../../utils/tagsItems';
 
 const Laws = () => {
   const
@@ -36,7 +37,7 @@ const Laws = () => {
       </div>
 
       <div className="tabs-content">
-        <InfoFilter />
+        <InfoFilter tags={tags} />
 
         <LawsRouter />
       </div>

@@ -1,0 +1,32 @@
+@import '../../../../src/assets/styles/utils/utils';
+
+.tags-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $grey;
+  background: transparent;
+  border-radius: 4px;
+  padding: 2px 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @include transition();
+
+  &:hover {
+    border-color: $white;
+  }
+
+  &__text {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 300;
+    @include adaptiv-font(14, 12);
+    letter-spacing: 0.08em;
+  }
+
+  &.active {
+    border-color: $white;
+    background: $white;
+    color: $black;
+  }
+}

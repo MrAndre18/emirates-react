@@ -1,0 +1,13 @@
+@import '../../assets/styles/utils/utils';
+
+.tags {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  @include adaptiv-value('padding-right', 40, 10);
+  @include adaptiv-value('padding-left', 40, 10);
+
+  &-item {
+    margin: 0 10px 10px 0;
+  }
+}
