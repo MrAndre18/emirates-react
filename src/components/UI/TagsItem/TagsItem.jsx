@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classes from './TagsItem.module.scss';
 
-const TagsItem = ({ name, value, selectedTags, setSelectedTags }) => {
+const TagsItem = ({ name, id, selectedTags, setSelectedTags }) => {
   const
     [isActive, setIsActive] = useState(false),
     rootClasses = [classes['tags-button']]
@@ -21,7 +21,7 @@ const TagsItem = ({ name, value, selectedTags, setSelectedTags }) => {
   return (
     <button
       className={rootClasses.join(' ')}
-      value={value}
+      value={id}
       onClick={chooseTag}
     >
       <span className={classes["tags-button__text"]}>{name}</span>

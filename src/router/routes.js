@@ -45,4 +45,8 @@ export const lawsCategoriesRoutes = [
     path: 'labor_law',
     element: <LawsList />,
   },
+  {
+    path: '*',
+    element: <LawsList />,
+  },
 ]

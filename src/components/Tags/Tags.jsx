@@ -14,7 +14,7 @@ const Tags = ({ tags }) => {
         >
           <TagsItem
             name={tag.name}
-            value={tag.value}
+            id={tag.id}
             selectedTags={selectedTags}
             setSelectedTags={setSelectedTags}
           />

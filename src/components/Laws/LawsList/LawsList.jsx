@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LawsListContext } from '../../../context/context';
+import PostsList from '../../Posts/PostsList/PostsList';
 
-const LawsList = ({ text }) => {
+const LawsList = () => {
+  const { lawsList } = useContext(LawsListContext)
+  
   return (
-    <div>{text}</div>
+    <div className="laws-list">
+      <PostsList posts={lawsList} />
+    </div>
   );
 };
 

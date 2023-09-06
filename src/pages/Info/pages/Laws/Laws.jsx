@@ -9,13 +9,16 @@ import CategoriesMenu from '../../../../components/CategoriesMenu/CategoriesMenu
 import BtnCategoriesBack from '../../../../components/UI/buttons/btnCategoriesBack/BtnCategoriesBack';
 import InfoFilter from '../../../../components/InfoFilter/InfoFilter';
 import { tags } from '../../../../utils/tagsItems';
+import { lawsItems } from '../../../../utils/lawsItems';
+import { LawsListContext } from '../../../../context/context';
 
 const Laws = () => {
   const
     [linksList, setLinksList] = useState([]),
     [prevCategoryName, setPrevCategoryName] = useState(''),
     [prevCategoryPath, setPrevCategoryPath] = useState(''),
-    location = useLocation()
+    location = useLocation(),
+    [lawsList, setLawsList] = useState(lawsItems)
 
   useEffect(() => {
     setLinksList(getCategoriesArray(lawsCategories, location))
@@ -23,6 +26,10 @@ const Laws = () => {
     setPrevCategoryName(getPreviousCategory(lawsCategories, location).name)
     setPrevCategoryPath(getPreviousCategory(lawsCategories, location).path)
   }, [location, prevCategoryPath, prevCategoryName])
+
+  // useEffect(() => {
+  //   // Запрос на получение списка категорий
+  // }, [])
 
   return (
     <div className="tabs-page">
@@ -39,7 +46,14 @@ const Laws = () => {
       <div className="tabs-content">
         <InfoFilter tags={tags} />
 
-        <LawsRouter />
+        <LawsListContext.Provider
+          value={{
+            lawsList,
+            setLawsList
+          }}
+        >
+          <LawsRouter />
+        </LawsListContext.Provider>
       </div>
 
     </div>
